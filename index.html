@@ -1,13 +1,107 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simia</title>
-    <link rel="stylesheet" href="style.css">
+
+    <meta name="description" content="Simia's Official Website">
+    <meta property="og:type" content="Website">
+    <meta property="og:url" content="https://simia.com">
+    <meta property="og:title" content="Simia">
+    <meta property="og:description" content="Simia">
+    <meta property="og:image" content="https://raw.githubusercontent.com/k3rodev/webreq/main/k3ro+flickz2.jpg">
+
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" type="image/x-icon" href="https://github.com/k3ro-dev/WebReq/blob/main/Screenshot_2026-09-11_214537.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
 </head>
 
-<body>
-    <a href="#" class="simia">Simia</a>
+<body id="body">
+
+     <div class="snow">
+        <div class="drop">*</div><div class="drop">*</div><div class="drop">*</div>
+        <div class="drop">*</div><div class="drop">*</div><div class="drop">*</div>
+        <div class="drop">*</div><div class="drop">*</div><div class="drop">*</div>
+        <div class="drop">*</div><div class="drop">*</div><div class="drop">*</div>
+        <div class="drop">*</div><div class="drop">*</div><div class="drop">*</div>
+        <div class="drop">*</div><div class="drop">*</div><div class="drop">*</div>
+    </div>
+
+
+
+<div id="click" class="click"><h3>Simia</h3></div>
+
+
+    <video id="video"></video>
+    <audio id="audio"></audio>
+
+    <div class="center">
+        <div class="below-center">
+            <button id="muteButton"><img src="assets/icons/mute.png" class="muteButton"></button>
+                <script>muteButton.addEventListener("click", () => {audio.muted = !audio.muted});</script>
+
+            <button id="playNext"><img src="assets/icons/playnext.svg"></button>
+                <script>playNext.addEventListener("click", () => {playRandom();});</script>
+
+            <img src="https://raw.githubusercontent.com/k3rodev/webreq/main/k3ro+flickz2.jpg" class="logo" />
+
+            <h1>k3ro</h1>
+            <p class="rainbow-text"> Coding>>> </p>
+
+            <div class="links">
+
+                <a href="https://discord.com/channels/1532266341728260206/1532267374626209842" target="_blank">
+                    <img src="assets/icons/discord.svg" class="Discord"/>
+                </a>
+            </div>
+        </div>
+    </div>
+
+<script>
+const sounds = [
+"assets/videos/bgmusic.mp4"
+];
+
+let currentIndex = -1;
+
+const video = document.getElementById("video");
+const audio = document.getElementById("audio");
+
+function getRandomIndex() {
+    let newIndex;
+    do {
+        newIndex = Math.floor(Math.random() * sounds.length);
+    } while (newIndex === currentIndex);
+    return newIndex;
+}
+
+function playRandom() {
+    currentIndex = getRandomIndex();
+    const file = sounds[currentIndex];
+
+    video.src = file;
+    audio.src = file;
+
+
+    video.play();
+    audio.play();
+}
+
+video.addEventListener("ended", playRandom);
+
+window.onclick = function () {
+    playRandom();
+
+    video.volume = 0;
+    audio.volume = 1;
+
+    const click = document.getElementById("click");
+    if (click) click.remove();
+
+    window.onclick = null;
+};
+
+</script>
+
 </body>
 </html>
