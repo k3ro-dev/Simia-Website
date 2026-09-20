@@ -1,4 +1,31 @@
 /* ================================= */
+/* BASIC RESET */
+/* ================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    background: #050505;
+    color: white;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+}
+
+
+/* ================================= */
 /* SNOW */
 /* ================================= */
 
@@ -18,6 +45,7 @@
     overflow: hidden;
 }
 
+
 .snowflake {
     position: absolute;
 
@@ -32,31 +60,612 @@
     opacity: 0.8;
 
     animation-name: snowfall;
+
     animation-timing-function: linear;
+
     animation-iteration-count: infinite;
 }
+
 
 @keyframes snowfall {
 
     0% {
+
         transform:
             translateY(-20px)
             translateX(0)
             rotate(0deg);
+
     }
 
+
     50% {
+
         transform:
             translateY(50vh)
             translateX(30px)
             rotate(180deg);
+
     }
 
+
     100% {
+
         transform:
             translateY(110vh)
             translateX(-30px)
             rotate(360deg);
+
+    }
+
+}
+
+
+/* ================================= */
+/* INTRO SCREEN */
+/* ================================= */
+
+#intro {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: #050505;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    z-index: 9999;
+
+    cursor: pointer;
+
+    transition:
+        opacity 1s ease,
+        visibility 1s ease;
+}
+
+
+.intro-content {
+
+    animation:
+        float 4s ease-in-out infinite;
+
+}
+
+
+.intro-content h1 {
+
+    font-size:
+        clamp(80px, 15vw, 190px);
+
+    font-weight: 900;
+
+    letter-spacing: 20px;
+
+    margin-bottom: 35px;
+
+    transition: 0.3s;
+
+}
+
+
+.intro-content p {
+
+    color: #777;
+
+    font-size: 13px;
+
+    letter-spacing: 4px;
+
+    animation:
+        blink 2s infinite;
+
+}
+
+
+/* ================================= */
+/* INTRO HOVER */
+/* ================================= */
+
+#intro:hover .intro-content h1 {
+
+    transform: scale(1.04);
+
+    letter-spacing: 25px;
+
+}
+
+
+/* ================================= */
+/* INTRO DISAPPEARS */
+/* ================================= */
+
+#intro.hidden {
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+}
+
+
+/* ================================= */
+/* MAIN WEBSITE */
+/* ================================= */
+
+#website {
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+        opacity 1.2s ease;
+
+}
+
+
+#website.visible {
+
+    opacity: 1;
+
+    visibility: visible;
+
+}
+
+
+/* ================================= */
+/* NAVIGATION */
+/* ================================= */
+
+.navbar {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 25px 50px;
+
+    background:
+        rgba(0, 0, 0, 0.65);
+
+    backdrop-filter:
+        blur(10px);
+
+    z-index: 1000;
+
+}
+
+
+.logo {
+
+    font-size: 25px;
+
+    font-weight: 900;
+
+    letter-spacing: 5px;
+
+}
+
+
+nav {
+
+    display: flex;
+
+    gap: 30px;
+
+}
+
+
+nav a {
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    transition: 0.2s;
+
+}
+
+
+nav a:hover {
+
+    opacity: 0.45;
+
+}
+
+
+/* ================================= */
+/* HERO */
+/* ================================= */
+
+.hero {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            #252525 0%,
+            #0c0c0c 45%,
+            #050505 100%
+        );
+
+}
+
+
+.hero-content h1 {
+
+    font-size:
+        clamp(80px, 15vw, 180px);
+
+    font-weight: 900;
+
+    letter-spacing: 18px;
+
+}
+
+
+.hero-content p {
+
+    color: #999;
+
+    font-size: 18px;
+
+    margin:
+        20px 0 35px;
+
+}
+
+
+/* ================================= */
+/* BUTTONS */
+/* ================================= */
+
+.button {
+
+    display: inline-block;
+
+    padding: 15px 30px;
+
+    background: white;
+
+    color: black;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    transition: 0.25s;
+
+}
+
+
+.button:hover {
+
+    transform:
+        translateY(-4px);
+
+    opacity: 0.8;
+
+}
+
+
+/* ================================= */
+/* SECTIONS */
+/* ================================= */
+
+.section {
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 120px 30px;
+
+}
+
+
+.section h2,
+.community h2 {
+
+    font-size: 45px;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 30px;
+
+}
+
+
+.description {
+
+    max-width: 700px;
+
+    color: #999;
+
+    line-height: 1.8;
+
+    font-size: 18px;
+
+}
+
+
+/* ================================= */
+/* FEATURES */
+/* ================================= */
+
+.features {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+
+    margin-top: 60px;
+
+}
+
+
+.feature {
+
+    padding: 35px;
+
+    background: #111;
+
+    border: 1px solid #222;
+
+    transition: 0.25s;
+
+}
+
+
+.feature:hover {
+
+    transform:
+        translateY(-5px);
+
+    border-color: #444;
+
+}
+
+
+.feature h3 {
+
+    margin-bottom: 15px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.feature p {
+
+    color: #888;
+
+    line-height: 1.6;
+
+}
+
+
+/* ================================= */
+/* SCREENSHOTS */
+/* ================================= */
+
+.screenshots {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+
+}
+
+
+.screenshot {
+
+    height: 300px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: #151515;
+
+    border: 1px solid #292929;
+
+    color: #666;
+
+    transition: 0.25s;
+
+}
+
+
+.screenshot:hover {
+
+    transform:
+        scale(1.02);
+
+}
+
+
+/* ================================= */
+/* DISCORD */
+/* ================================= */
+
+.community {
+
+    text-align: center;
+
+    padding: 150px 30px;
+
+    background: #101010;
+
+}
+
+
+.community p {
+
+    color: #888;
+
+    margin-bottom: 30px;
+
+}
+
+
+/* ================================= */
+/* FOOTER */
+/* ================================= */
+
+footer {
+
+    padding: 40px;
+
+    text-align: center;
+
+    color: #444;
+
+    font-size: 12px;
+
+}
+
+
+/* ================================= */
+/* INTRO ANIMATIONS */
+/* ================================= */
+
+@keyframes float {
+
+    0% {
+
+        transform:
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-12px);
+
+    }
+
+    100% {
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+@keyframes blink {
+
+    0% {
+
+        opacity: 0.3;
+
+    }
+
+    50% {
+
+        opacity: 1;
+
+    }
+
+    100% {
+
+        opacity: 0.3;
+
+    }
+
+}
+
+
+/* ================================= */
+/* MOBILE */
+/* ================================= */
+
+@media (max-width: 700px) {
+
+    .navbar {
+
+        padding: 20px;
+
+    }
+
+
+    nav {
+
+        display: none;
+
+    }
+
+
+    .intro-content h1 {
+
+        letter-spacing: 8px;
+
+    }
+
+
+    .hero-content h1 {
+
+        letter-spacing: 8px;
+
+    }
+
+
+    .features,
+    .screenshots {
+
+        grid-template-columns: 1fr;
+
     }
 
 }
