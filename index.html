@@ -12,15 +12,25 @@
 
 <body>
 
+    <!-- ========================= -->
     <!-- SNOW -->
+    <!-- ========================= -->
+
     <div id="snow"></div>
 
+
+    <!-- ========================= -->
     <!-- INTRO SCREEN -->
+    <!-- ========================= -->
+
     <div id="intro">
 
         <div class="intro-content">
+
             <h1>SIMIA</h1>
+
             <p>CLICK ANYWHERE TO ENTER</p>
+
         </div>
 
     </div>
@@ -32,22 +42,39 @@
 
     <main id="website">
 
+
+        <!-- ========================= -->
         <!-- NAVIGATION -->
+        <!-- ========================= -->
 
         <header class="navbar">
 
-            <div class="logo">SIMIA</div>
+            <div class="logo">
+                SIMIA
+            </div>
 
             <nav>
-                <a href="#game">THE GAME</a>
-                <a href="#media">MEDIA</a>
-                <a href="#community">DISCORD</a>
+
+                <a href="#game">
+                    THE GAME
+                </a>
+
+                <a href="#media">
+                    MEDIA
+                </a>
+
+                <a href="#community">
+                    DISCORD
+                </a>
+
             </nav>
 
         </header>
 
 
+        <!-- ========================= -->
         <!-- HERO -->
+        <!-- ========================= -->
 
         <section class="hero">
 
@@ -68,100 +95,160 @@
         </section>
 
 
+        <!-- ========================= -->
         <!-- THE GAME -->
+        <!-- ========================= -->
 
         <section id="game" class="section">
 
             <h2>THE GAME</h2>
 
             <p class="description">
+
                 Welcome to SIMIA.
 
-                Explore, play, and discover a new VR experience.
+                Explore, play, and discover
+                a new VR experience.
+
             </p>
+
 
             <div class="features">
 
+
                 <div class="feature">
+
                     <h3>VR</h3>
-                    <p>Built specifically for virtual reality.</p>
+
+                    <p>
+                        Built specifically
+                        for virtual reality.
+                    </p>
+
                 </div>
 
+
                 <div class="feature">
+
                     <h3>EXPLORE</h3>
-                    <p>Discover the world of SIMIA.</p>
+
+                    <p>
+                        Discover the world
+                        of SIMIA.
+                    </p>
+
                 </div>
 
+
                 <div class="feature">
+
                     <h3>PLAY</h3>
-                    <p>Jump in and experience the game.</p>
+
+                    <p>
+                        Jump in and experience
+                        the game.
+                    </p>
+
                 </div>
+
 
             </div>
 
         </section>
 
 
+        <!-- ========================= -->
         <!-- MEDIA -->
+        <!-- ========================= -->
 
         <section id="media" class="section">
 
             <h2>MEDIA</h2>
 
+
             <div class="screenshots">
 
-                <div class="screenshot">
-                    <span>SCREENSHOT 1</span>
-                </div>
 
                 <div class="screenshot">
-                    <span>SCREENSHOT 2</span>
+                    <span>
+                        SCREENSHOT 1
+                    </span>
                 </div>
 
+
                 <div class="screenshot">
-                    <span>SCREENSHOT 3</span>
+                    <span>
+                        SCREENSHOT 2
+                    </span>
                 </div>
+
+
+                <div class="screenshot">
+                    <span>
+                        SCREENSHOT 3
+                    </span>
+                </div>
+
 
             </div>
 
         </section>
 
 
+        <!-- ========================= -->
         <!-- DISCORD -->
+        <!-- ========================= -->
 
         <section id="community" class="community">
 
-            <h2>JOIN THE COMMUNITY</h2>
+            <h2>
+                JOIN THE COMMUNITY
+            </h2>
 
             <p>
-                Join the SIMIA Discord for news, updates and announcements.
+                Join the SIMIA Discord for
+                news, updates and announcements.
             </p>
+
 
             <a
                 class="button"
                 href="https://discord.gg/9kNRmvbgqt"
                 target="_blank">
+
                 JOIN DISCORD
+
             </a>
 
         </section>
 
 
+        <!-- ========================= -->
         <!-- FOOTER -->
+        <!-- ========================= -->
 
         <footer>
-            <p>© 2026 SIMIA</p>
+
+            <p>
+                © 2026 SIMIA
+            </p>
+
         </footer>
+
 
     </main>
 
 
     <!-- ========================= -->
-    <!-- MUSIC -->
+    <!-- BACKGROUND MUSIC -->
     <!-- ========================= -->
 
     <audio id="music" loop>
-        <source src="assets/audios/bgmusic.mp3" type="audio/mpeg">
+
+        <source
+            src="assets/audios/bgmusic.mp3"
+            type="audio/mpeg">
+
     </audio>
 
 
@@ -171,11 +258,21 @@
 
     <script>
 
-        const intro = document.getElementById("intro");
-        const website = document.getElementById("website");
-        const music = document.getElementById("music");
+        const intro =
+            document.getElementById("intro");
+
+        const website =
+            document.getElementById("website");
+
+        const music =
+            document.getElementById("music");
 
         let entered = false;
+
+
+        /* ========================= */
+        /* ENTER WEBSITE */
+        /* ========================= */
 
         document.addEventListener("click", function () {
 
@@ -183,16 +280,65 @@
 
             entered = true;
 
+
             // Start music
             music.play().catch(() => {});
 
+
             // Fade out intro
             intro.classList.add("hidden");
+
 
             // Show website
             website.classList.add("visible");
 
         });
+
+
+        /* ========================= */
+        /* SNOW */
+        /* ========================= */
+
+        const snow =
+            document.getElementById("snow");
+
+
+        for (let i = 0; i < 100; i++) {
+
+            const flake =
+                document.createElement("div");
+
+
+            flake.className =
+                "snowflake";
+
+
+            flake.innerHTML = "❄";
+
+
+            flake.style.left =
+                Math.random() * 100 + "%";
+
+
+            flake.style.fontSize =
+                (Math.random() * 10 + 8) + "px";
+
+
+            flake.style.opacity =
+                Math.random() * 0.7 + 0.3;
+
+
+            flake.style.animationDuration =
+                (Math.random() * 8 + 5) + "s";
+
+
+            flake.style.animationDelay =
+                (Math.random() * 10) + "s";
+
+
+            snow.appendChild(flake);
+
+        }
 
     </script>
 
