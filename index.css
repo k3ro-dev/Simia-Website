@@ -1,14 +1,43 @@
-.poetsen-one-regular {
-  font-family: "Poetsen One", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-body {
+```css
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
     min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     background:
         radial-gradient(circle at 20% 20%, #14658a 0%, transparent 35%),
         radial-gradient(circle at 80% 80%, #0b4b70 0%, transparent 40%),
         linear-gradient(135deg, #04111f, #092b43 50%, #0d5272);
-    color: white;
+
+    font-family: Poetson One, sans-serif;
 }
+
+.simia {
+    color: #d8b4ff;
+    font-size: 52px;
+    font-weight: 700;
+    text-decoration: none;
+
+    text-shadow:
+        0 0 10px rgba(216, 180, 255, 0.5),
+        0 0 25px rgba(216, 180, 255, 0.25);
+
+    transition: all 0.25s ease;
+}
+
+.simia:hover {
+    color: #ead7ff;
+    transform: scale(1.08);
+
+    text-shadow:
+        0 0 15px rgba(216, 180, 255, 0.8),
+        0 0 35px rgba(216, 180, 255, 0.45);
+}
+```
