@@ -1,107 +1,149 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Simia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="Simia's Official Website">
-    <meta property="og:type" content="Website">
-    <meta property="og:url" content="https://simia.com">
-    <meta property="og:title" content="Simia">
-    <meta property="og:description" content="Simia">
-    <meta property="og:image" content="https://raw.githubusercontent.com/k3rodev/webreq/main/k3ro+flickz2.jpg">
+    <title>SIMIA</title>
+    <meta name="description" content="SIMIA - A VR game.">
 
     <link rel="stylesheet" href="index.css">
-    <link rel="icon" type="image/x-icon" href="https://github.com/k3ro-dev/WebReq/blob/main/Screenshot_2026-09-11_214537.png">
-    <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
 </head>
 
-<body id="body">
+<body>
 
-     <div class="snow">
-        <div class="drop">*</div><div class="drop">*</div><div class="drop">*</div>
-        <div class="drop">*</div><div class="drop">*</div><div class="drop">*</div>
-        <div class="drop">*</div><div class="drop">*</div><div class="drop">*</div>
-        <div class="drop">*</div><div class="drop">*</div><div class="drop">*</div>
-        <div class="drop">*</div><div class="drop">*</div><div class="drop">*</div>
-        <div class="drop">*</div><div class="drop">*</div><div class="drop">*</div>
-    </div>
+    <!-- NAVIGATION -->
+    <header class="navbar">
+        <div class="logo">SIMIA</div>
+
+        <nav>
+            <a href="#home">HOME</a>
+            <a href="#game">THE GAME</a>
+            <a href="#media">MEDIA</a>
+            <a href="#community">COMMUNITY</a>
+        </nav>
+    </header>
 
 
+    <!-- HERO -->
+    <section id="home" class="hero">
 
-<div id="click" class="click"><h3>Simia</h3></div>
+        <div class="hero-content">
+            <h1>SIMIA</h1>
 
+            <p>
+                A VR game unlike anything you've played before.
+            </p>
 
-    <video id="video"></video>
-    <audio id="audio"></audio>
+            <div class="buttons">
+                <a class="button" href="#game">LEARN MORE</a>
 
-    <div class="center">
-        <div class="below-center">
-            <button id="muteButton"><img src="assets/icons/mute.png" class="muteButton"></button>
-                <script>muteButton.addEventListener("click", () => {audio.muted = !audio.muted});</script>
-
-            <button id="playNext"><img src="assets/icons/playnext.svg"></button>
-                <script>playNext.addEventListener("click", () => {playRandom();});</script>
-
-            <img src="https://raw.githubusercontent.com/k3rodev/webreq/main/k3ro+flickz2.jpg" class="logo" />
-
-            <h1>k3ro</h1>
-            <p class="rainbow-text"> Coding>>> </p>
-
-            <div class="links">
-
-                <a href="https://discord.com/channels/1532266341728260206/1532267374626209842" target="_blank">
-                    <img src="assets/icons/discord.svg" class="Discord"/>
+                <a class="button secondary"
+                   href="https://discord.gg/9kNRmvbgqt"
+                   target="_blank">
+                    DISCORD
                 </a>
             </div>
         </div>
-    </div>
 
-<script>
-const sounds = [
-"assets/audio/bgmusic.mp3"
-];
-
-let currentIndex = -1;
-
-const video = document.getElementById("video");
-const audio = document.getElementById("audio");
-
-function getRandomIndex() {
-    let newIndex;
-    do {
-        newIndex = Math.floor(Math.random() * sounds.length);
-    } while (newIndex === currentIndex);
-    return newIndex;
-}
-
-function playRandom() {
-    currentIndex = getRandomIndex();
-    const file = sounds[currentIndex];
-
-    video.src = file;
-    audio.src = file;
+    </section>
 
 
-    video.play();
-    audio.play();
-}
+    <!-- THE GAME -->
+    <section id="game" class="section">
 
-video.addEventListener("ended", playRandom);
+        <h2>THE GAME</h2>
 
-window.onclick = function () {
-    playRandom();
+        <p class="description">
+            Welcome to SIMIA.
 
-    video.volume = 0;
-    audio.volume = 1;
+            <!-- Replace this with your actual game description -->
+            Explore, play, and discover a new VR experience.
+        </p>
 
-    const click = document.getElementById("click");
-    if (click) click.remove();
+        <div class="features">
 
-    window.onclick = null;
-};
+            <div class="feature">
+                <h3>VR</h3>
+                <p>Built specifically for virtual reality.</p>
+            </div>
 
-</script>
+            <div class="feature">
+                <h3>EXPLORE</h3>
+                <p>Discover the world of SIMIA.</p>
+            </div>
+
+            <div class="feature">
+                <h3>PLAY</h3>
+                <p>Jump in and experience the game.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MEDIA -->
+    <section id="media" class="section">
+
+        <h2>MEDIA</h2>
+
+        <div class="screenshots">
+
+            <!-- Replace these with your actual images -->
+            <div class="screenshot">
+                <span>SCREENSHOT 1</span>
+            </div>
+
+            <div class="screenshot">
+                <span>SCREENSHOT 2</span>
+            </div>
+
+            <div class="screenshot">
+                <span>SCREENSHOT 3</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- COMMUNITY -->
+    <section id="community" class="community">
+
+        <h2>JOIN THE COMMUNITY</h2>
+
+        <p>
+            Join the SIMIA Discord for news, updates and announcements.
+        </p>
+
+        <a class="button"
+           href="https://discord.gg/9kNRmvbgqt"
+           target="_blank">
+            JOIN DISCORD
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 SIMIA</p>
+    </footer>
+
+
+        <!-- BACKGROUND MUSIC -->
+    <audio id="music" loop>
+        <source src="assets/audios/bgmusic.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        const music = document.getElementById("music");
+
+        document.addEventListener("click", () => {
+            music.play().catch(() => {});
+        }, { once: true });
+    </script>
 
 </body>
 </html>
