@@ -12,137 +12,189 @@
 
 <body>
 
-    <!-- NAVIGATION -->
-    <header class="navbar">
-        <div class="logo">SIMIA</div>
+    <!-- ========================= -->
+    <!-- INTRO SCREEN -->
+    <!-- ========================= -->
 
-        <nav>
-            <a href="#home">HOME</a>
-            <a href="#game">THE GAME</a>
-            <a href="#media">MEDIA</a>
-            <a href="#community">COMMUNITY</a>
-        </nav>
-    </header>
+    <div id="intro">
 
-
-    <!-- HERO -->
-    <section id="home" class="hero">
-
-        <div class="hero-content">
+        <div class="intro-content">
             <h1>SIMIA</h1>
 
-            <p>
-                A VR game unlike anything you've played before.
+            <p>CLICK ANYWHERE TO ENTER</p>
+        </div>
+
+    </div>
+
+
+    <!-- ========================= -->
+    <!-- MAIN WEBSITE -->
+    <!-- ========================= -->
+
+    <main id="website">
+
+        <!-- NAVIGATION -->
+
+        <header class="navbar">
+
+            <div class="logo">SIMIA</div>
+
+            <nav>
+                <a href="#game">THE GAME</a>
+                <a href="#media">MEDIA</a>
+                <a href="#community">DISCORD</a>
+            </nav>
+
+        </header>
+
+
+        <!-- HERO -->
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <h1>SIMIA</h1>
+
+                <p>
+                    A VR game unlike anything you've played before.
+                </p>
+
+                <a class="button" href="#game">
+                    ENTER
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- THE GAME -->
+
+        <section id="game" class="section">
+
+            <h2>THE GAME</h2>
+
+            <p class="description">
+                Welcome to SIMIA.
+
+                Explore, play, and discover a new VR experience.
             </p>
 
-            <div class="buttons">
-                <a class="button" href="#game">LEARN MORE</a>
+            <div class="features">
 
-                <a class="button secondary"
-                   href="https://discord.gg/9kNRmvbgqt"
-                   target="_blank">
-                    DISCORD
-                </a>
-            </div>
-        </div>
+                <div class="feature">
+                    <h3>VR</h3>
+                    <p>Built specifically for virtual reality.</p>
+                </div>
 
-    </section>
+                <div class="feature">
+                    <h3>EXPLORE</h3>
+                    <p>Discover the world of SIMIA.</p>
+                </div>
 
+                <div class="feature">
+                    <h3>PLAY</h3>
+                    <p>Jump in and experience the game.</p>
+                </div>
 
-    <!-- THE GAME -->
-    <section id="game" class="section">
-
-        <h2>THE GAME</h2>
-
-        <p class="description">
-            Welcome to SIMIA.
-
-            <!-- Replace this with your actual game description -->
-            Explore, play, and discover a new VR experience.
-        </p>
-
-        <div class="features">
-
-            <div class="feature">
-                <h3>VR</h3>
-                <p>Built specifically for virtual reality.</p>
             </div>
 
-            <div class="feature">
-                <h3>EXPLORE</h3>
-                <p>Discover the world of SIMIA.</p>
+        </section>
+
+
+        <!-- MEDIA -->
+
+        <section id="media" class="section">
+
+            <h2>MEDIA</h2>
+
+            <div class="screenshots">
+
+                <div class="screenshot">
+                    <span>SCREENSHOT 1</span>
+                </div>
+
+                <div class="screenshot">
+                    <span>SCREENSHOT 2</span>
+                </div>
+
+                <div class="screenshot">
+                    <span>SCREENSHOT 3</span>
+                </div>
+
             </div>
 
-            <div class="feature">
-                <h3>PLAY</h3>
-                <p>Jump in and experience the game.</p>
-            </div>
-
-        </div>
-
-    </section>
+        </section>
 
 
-    <!-- MEDIA -->
-    <section id="media" class="section">
+        <!-- DISCORD -->
 
-        <h2>MEDIA</h2>
+        <section id="community" class="community">
 
-        <div class="screenshots">
+            <h2>JOIN THE COMMUNITY</h2>
 
-            <!-- Replace these with your actual images -->
-            <div class="screenshot">
-                <span>SCREENSHOT 1</span>
-            </div>
+            <p>
+                Join the SIMIA Discord for news, updates and announcements.
+            </p>
 
-            <div class="screenshot">
-                <span>SCREENSHOT 2</span>
-            </div>
+            <a
+                class="button"
+                href="https://discord.gg/9kNRmvbgqt"
+                target="_blank">
+                JOIN DISCORD
+            </a>
 
-            <div class="screenshot">
-                <span>SCREENSHOT 3</span>
-            </div>
-
-        </div>
-
-    </section>
+        </section>
 
 
-    <!-- COMMUNITY -->
-    <section id="community" class="community">
+        <!-- FOOTER -->
 
-        <h2>JOIN THE COMMUNITY</h2>
+        <footer>
+            <p>© 2026 SIMIA</p>
+        </footer>
 
-        <p>
-            Join the SIMIA Discord for news, updates and announcements.
-        </p>
-
-        <a class="button"
-           href="https://discord.gg/9kNRmvbgqt"
-           target="_blank">
-            JOIN DISCORD
-        </a>
-
-    </section>
+    </main>
 
 
-    <!-- FOOTER -->
-    <footer>
-        <p>© 2026 SIMIA</p>
-    </footer>
+    <!-- ========================= -->
+    <!-- MUSIC -->
+    <!-- ========================= -->
 
-
-        <!-- BACKGROUND MUSIC -->
     <audio id="music" loop>
         <source src="assets/audios/bgmusic.mp3" type="audio/mpeg">
     </audio>
 
+
+    <!-- ========================= -->
+    <!-- JAVASCRIPT -->
+    <!-- ========================= -->
+
     <script>
+
+        const intro = document.getElementById("intro");
+        const website = document.getElementById("website");
         const music = document.getElementById("music");
 
-        document.addEventListener("click", () => {
+        let entered = false;
+
+        document.addEventListener("click", function () {
+
+            if (entered) return;
+
+            entered = true;
+
+            // Start music
             music.play().catch(() => {});
-        }, { once: true });
+
+            // Fade out intro
+            intro.classList.add("hidden");
+
+            // Show website
+            website.classList.add("visible");
+
+        });
+
     </script>
 
 </body>
