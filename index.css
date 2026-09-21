@@ -15,20 +15,17 @@ html {
 
 
 body {
-
     color: white;
+    font-family: Poetson One, sans-serif;
 
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
+    background-image: url("assets/images/bgsim.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 
-    background:
-        radial-gradient(
-            circle at 50% 0%,
-            rgba(255,255,255,0.95),
-            rgba(130,210,255,0.4) 25%,
-            transparent 55%
+    min-height: 100vh;
+}
         ),
         linear-gradient(
             135deg,
