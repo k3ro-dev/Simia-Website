@@ -84,7 +84,7 @@
                     href="https://discord.gg/9kNRmvbgqt"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="assets/images/discord.svg"
+                    class="social-icon"
                 >
 
                     <img
@@ -105,17 +105,17 @@
                 </a>
 
 
-                <!-- CONTENT CREATOR -->
+                <!-- YOUTUBE / CONTENT CREATOR -->
 
                 <a
-                    href="https://google.forms/"
+                    href="YOUR_CONTENT_CREATOR_APPLICATION_LINK"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="youtube-color-svgrepo-com.svg"
+                    class="social-icon"
                 >
 
                     <img
-                        src="assets/images/youtube-color-svgrepo-com.svg"
+                        src="assets/images/youtube.svg"
                         alt="Content Creator Applications"
                     >
 
@@ -353,16 +353,10 @@
 
             entered = true;
 
-
-            // Start music
             music.play().catch(() => {});
 
-
-            // Fade out intro
             intro.classList.add("hidden");
 
-
-            // Show website
             website.classList.add("visible");
 
         });
@@ -381,33 +375,25 @@
             const flake =
                 document.createElement("div");
 
-
             flake.className =
                 "snowflake";
 
-
-            flake.innerHTML = "❄";
-
+            flake.innerHTML = "❆";
 
             flake.style.left =
                 Math.random() * 100 + "%";
 
-
             flake.style.fontSize =
                 (Math.random() * 10 + 8) + "px";
-
 
             flake.style.opacity =
                 Math.random() * 0.7 + 0.3;
 
-
             flake.style.animationDuration =
                 (Math.random() * 8 + 5) + "s";
 
-
             flake.style.animationDelay =
                 (Math.random() * 10) + "s";
-
 
             snow.appendChild(flake);
 
