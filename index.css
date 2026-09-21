@@ -17,21 +17,14 @@ html {
 body {
     color: white;
     font-family: Arial, Helvetica, sans-serif;
-    background:
-        radial-gradient(
-            circle at 50% 0%,
-            rgba(255,255,255,0.95),
-            rgba(130,210,255,0.4) 25%,
-            transparent 55%
-        ),
-        linear-gradient(
-            135deg,
-            #071522,
-            #0d4f78,
-            #78ccef,
-            #eafaff
-        );
+
+    background-image: url("assets/images/background.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     background-attachment: fixed;
+
+    min-height: 100vh;
 }
         ),
         linear-gradient(
