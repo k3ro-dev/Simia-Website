@@ -15,13 +15,31 @@ html {
 
 
 body {
-    background: #050505;
+
     color: white;
 
     font-family:
         Arial,
         Helvetica,
         sans-serif;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(255,255,255,0.95),
+            rgba(130,210,255,0.4) 25%,
+            transparent 55%
+        ),
+        linear-gradient(
+            135deg,
+            #071522,
+            #0d4f78,
+            #78ccef,
+            #eafaff
+        );
+
+    background-attachment: fixed;
+
 }
 
 
@@ -30,6 +48,7 @@ body {
 /* ================================= */
 
 #snow {
+
     position: fixed;
 
     top: 0;
@@ -43,10 +62,12 @@ body {
     z-index: 10000;
 
     overflow: hidden;
+
 }
 
 
 .snowflake {
+
     position: absolute;
 
     top: -20px;
@@ -64,6 +85,7 @@ body {
     animation-timing-function: linear;
 
     animation-iteration-count: infinite;
+
 }
 
 
@@ -78,7 +100,6 @@ body {
 
     }
 
-
     50% {
 
         transform:
@@ -87,7 +108,6 @@ body {
             rotate(180deg);
 
     }
-
 
     100% {
 
@@ -106,6 +126,7 @@ body {
 /* ================================= */
 
 #intro {
+
     position: fixed;
 
     top: 0;
@@ -114,7 +135,14 @@ body {
     width: 100%;
     height: 100%;
 
-    background: #050505;
+    background:
+        linear-gradient(
+            135deg,
+            #071522,
+            #0d4f78,
+            #78ccef,
+            #eafaff
+        );
 
     display: flex;
 
@@ -130,6 +158,7 @@ body {
     transition:
         opacity 1s ease,
         visibility 1s ease;
+
 }
 
 
@@ -154,12 +183,17 @@ body {
 
     transition: 0.3s;
 
+    text-shadow:
+        0 0 30px
+        rgba(255,255,255,0.5);
+
 }
 
 
 .intro-content p {
 
-    color: #777;
+    color:
+        rgba(255,255,255,0.75);
 
     font-size: 13px;
 
@@ -246,10 +280,14 @@ body {
     padding: 25px 50px;
 
     background:
-        rgba(0, 0, 0, 0.65);
+        rgba(5,20,35,0.55);
 
     backdrop-filter:
-        blur(10px);
+        blur(12px);
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,0.1);
 
     z-index: 1000;
 
@@ -301,6 +339,171 @@ nav a:hover {
 
 
 /* ================================= */
+/* SOCIAL ICONS */
+/* ================================= */
+
+.social-icons {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-left: auto;
+
+}
+
+
+.social-icon {
+
+    position: relative;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+
+    border-radius: 50%;
+
+    transition:
+        transform 0.25s ease,
+        opacity 0.25s ease;
+
+}
+
+
+.social-icon img {
+
+    display: block;
+
+    width: 28px;
+    height: 28px;
+
+    object-fit: contain;
+
+    transition:
+        transform 0.25s ease,
+        filter 0.25s ease;
+
+}
+
+
+.social-icon:hover {
+
+    transform:
+        translateY(-4px)
+        scale(1.08);
+
+}
+
+
+.social-icon:hover img {
+
+    transform: scale(1.15);
+
+    filter:
+        drop-shadow(
+            0 0 8px
+            rgba(255,255,255,0.8)
+        );
+
+}
+
+
+/* ================================= */
+/* ICON HOVER CARD */
+/* ================================= */
+
+.icon-popup {
+
+    position: absolute;
+
+    top: 52px;
+
+    right: 0;
+
+    width: 180px;
+
+    padding: 12px 15px;
+
+    background:
+        rgba(5,20,35,0.95);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.2);
+
+    border-radius: 8px;
+
+    backdrop-filter:
+        blur(12px);
+
+    text-align: center;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform:
+        translateY(-8px);
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease,
+        visibility 0.2s ease;
+
+    pointer-events: none;
+
+}
+
+
+.icon-popup strong {
+
+    display: block;
+
+    color: white;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 5px;
+
+}
+
+
+.icon-popup span {
+
+    display: block;
+
+    color: #9daab8;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+
+}
+
+
+.social-icon:hover .icon-popup {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+        translateY(0);
+
+}
+
+
+/* ================================= */
 /* HERO */
 /* ================================= */
 
@@ -320,9 +523,10 @@ nav a:hover {
 
         radial-gradient(
             circle at center,
-            #252525 0%,
-            #0c0c0c 45%,
-            #050505 100%
+            rgba(255,255,255,0.45) 0%,
+            rgba(100,190,240,0.35) 35%,
+            rgba(10,60,100,0.75) 75%,
+            #071522 100%
         );
 
 }
@@ -337,12 +541,17 @@ nav a:hover {
 
     letter-spacing: 18px;
 
+    text-shadow:
+        0 0 40px
+        rgba(255,255,255,0.45);
+
 }
 
 
 .hero-content p {
 
-    color: #999;
+    color:
+        rgba(255,255,255,0.8);
 
     font-size: 18px;
 
@@ -364,7 +573,7 @@ nav a:hover {
 
     background: white;
 
-    color: black;
+    color: #071522;
 
     text-decoration: none;
 
@@ -420,7 +629,8 @@ nav a:hover {
 
     max-width: 700px;
 
-    color: #999;
+    color:
+        rgba(255,255,255,0.7);
 
     line-height: 1.8;
 
@@ -451,9 +661,15 @@ nav a:hover {
 
     padding: 35px;
 
-    background: #111;
+    background:
+        rgba(5,25,40,0.45);
 
-    border: 1px solid #222;
+    border:
+        1px solid
+        rgba(255,255,255,0.15);
+
+    backdrop-filter:
+        blur(10px);
 
     transition: 0.25s;
 
@@ -465,7 +681,8 @@ nav a:hover {
     transform:
         translateY(-5px);
 
-    border-color: #444;
+    border-color:
+        rgba(255,255,255,0.4);
 
 }
 
@@ -481,7 +698,8 @@ nav a:hover {
 
 .feature p {
 
-    color: #888;
+    color:
+        rgba(255,255,255,0.65);
 
     line-height: 1.6;
 
@@ -514,11 +732,15 @@ nav a:hover {
 
     align-items: center;
 
-    background: #151515;
+    background:
+        rgba(5,25,40,0.5);
 
-    border: 1px solid #292929;
+    border:
+        1px solid
+        rgba(255,255,255,0.15);
 
-    color: #666;
+    color:
+        rgba(255,255,255,0.5);
 
     transition: 0.25s;
 
@@ -543,14 +765,16 @@ nav a:hover {
 
     padding: 150px 30px;
 
-    background: #101010;
+    background:
+        rgba(5,25,40,0.45);
 
 }
 
 
 .community p {
 
-    color: #888;
+    color:
+        rgba(255,255,255,0.7);
 
     margin-bottom: 30px;
 
@@ -567,7 +791,8 @@ footer {
 
     text-align: center;
 
-    color: #444;
+    color:
+        rgba(255,255,255,0.45);
 
     font-size: 12px;
 
@@ -575,7 +800,7 @@ footer {
 
 
 /* ================================= */
-/* INTRO ANIMATIONS */
+/* ANIMATIONS */
 /* ================================= */
 
 @keyframes float {
@@ -631,7 +856,7 @@ footer {
 /* MOBILE */
 /* ================================= */
 
-@media (max-width: 700px) {
+@media (max-width: 900px) {
 
     .navbar {
 
@@ -643,6 +868,13 @@ footer {
     nav {
 
         display: none;
+
+    }
+
+
+    .social-icons {
+
+        margin-left: auto;
 
     }
 
@@ -665,6 +897,33 @@ footer {
     .screenshots {
 
         grid-template-columns: 1fr;
+
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .logo {
+
+        font-size: 20px;
+
+    }
+
+
+    .social-icon {
+
+        width: 40px;
+        height: 40px;
+
+    }
+
+
+    .social-icon img {
+
+        width: 25px;
+        height: 25px;
 
     }
 
