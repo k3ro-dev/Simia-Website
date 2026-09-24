@@ -984,7 +984,7 @@ footer {
 **One thing you need to do:** rename your background picture to `simia-bg.png` and put it at:
 
 ```text
-assets/images/bgsim.jpg
+background-image: url("assets/images/simia-bg.png");
 ```
 
 If it's a `.jpg` or `.webp`, just change the filename in this line:
