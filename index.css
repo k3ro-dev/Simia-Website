@@ -16,7 +16,7 @@ html {
 
 body {
     color: white;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Fruit Days, sans-serif;
 
     background-image: url("assets/images/bgsim.jpg");
     background-size: cover;
@@ -1104,6 +1104,23 @@ footer {
     .simia-title span {
 
         font-size: 55px;
+
+        .discord-community-logo {
+    display: inline-block;
+    margin-top: 25px;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.discord-community-logo img {
+    width: 55px;
+    height: 55px;
+    display: block;
+}
+
+.discord-community-logo:hover {
+    transform: translateY(-5px) scale(1.1);
+    opacity: 0.8;
+}
 
     }
 
